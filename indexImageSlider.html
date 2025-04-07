@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image-Slider</title>
+    <link rel="stylesheet" href="style14.css">
+</head>
+<body>
+<div class="gallery-wrap">
+    <img src="https://img.freepik.com/premium-vector/rewind-button-icon-flat-art-black-white-isolated_1223784-16534.jpg?ga=GA1.1.2021150740.1743191465&semt=ais_hybrid&w=740" id="backBtn">
+       <div class="gallery">
+        <div>
+            <span><img src="https://img.freepik.com/free-photo/positive-college-student-has-dark-skin-carries-folders-book-points-with-cheerful-expression-aside-has-toothy-smile_273609-23704.jpg?ga=GA1.1.2021150740.1743191465&semt=ais_hybrid&w=740"></span>
+            <span><img src="https://img.freepik.com/free-photo/pleased-young-afro-american-student-with-backpack-holding-book-pointing-side_141793-122896.jpg?ga=GA1.1.2021150740.1743191465&semt=ais_hybrid&w=740"></span>
+            <span><img src="https://img.freepik.com/free-photo/portrait-young-woman-with-laptop-hands-outside-school_641386-1029.jpg?ga=GA1.1.2021150740.1743191465&semt=ais_hybrid&w=740"></span>
+        </div>
+        <div>
+            <span><img src="https://img.freepik.com/free-photo/portrait-happy-young-african-male-student_171337-8887.jpg?ga=GA1.1.2021150740.1743191465&semt=ais_hybrid&w=740"></span>
+            <span><img src="https://img.freepik.com/premium-photo/1884852031_1339901-7351.jpg?ga=GA1.1.2021150740.1743191465&semt=ais_hybrid&w=740"></span>
+            <span><img src="https://img.freepik.com/free-photo/african-american-woman-wearing-student-backpack-holding-books-smiling-happy-pointing-with-hand-finger-side_839833-34702.jpg?ga=GA1.1.2021150740.1743191465&semt=ais_hybrid&w=740"></span>
+        </div>
+       </div>
+    <img src="https://img.freepik.com/premium-vector/right-arrow-icon-set-forward-pointer-direction-vector-symbol-black-filled-outlined-style-right-button-sign_268104-9698.jpg?ga=GA1.1.2021150740.1743191465&semt=ais_hybrid&w=740" id="nextBtn">
+</div>
+
+
+
+<script>
+    
+    let scrollContainer = document.querySelector(".gallery");
+    let backBtn = document.getElementById("backBtn");
+    let nextBtn = document.getElementById("nextBtn");
+
+    scrollContainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+        scrollContainer.style.scrollBehavior = "auto";
+    });
+
+    nextBtn.addEventListener("click", () => {
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft += 900;
+    });
+
+    backBtn.addEventListener("click", () => {
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft -= 900;
+    })
+
+
+</script>
+</body>
+</html>
